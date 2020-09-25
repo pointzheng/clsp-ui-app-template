@@ -3,7 +3,6 @@ import 'regenerator-runtime/runtime';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ExamplePage from './routes/example-page';
 import { Form, Input, Button } from 'antd';
 
 const layout = {
@@ -25,8 +24,6 @@ class __componentName__ extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.connectedExamplePage = props.stripes.connect(ExamplePage);
   }
 
   render() {
