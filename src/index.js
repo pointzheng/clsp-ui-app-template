@@ -36,7 +36,7 @@ class __componentName__ extends React.Component {
 
    
     return (
-      <div>
+      <div style={{width: "720px", margin: "20px auto"}}>
         <Form
           {...layout}
           name="basic"
