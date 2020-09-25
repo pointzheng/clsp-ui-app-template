@@ -3,17 +3,17 @@ import 'regenerator-runtime/runtime';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Switch from 'react-router-dom/Switch';
-import Route from 'react-router-dom/Route';
-import Application from './routes/application';
 import ExamplePage from './routes/example-page';
-import Settings from './settings';
+import { Form, Input, Button } from 'antd';
+
+const layout = {
+  labelCol: { span: 3 },
+  wrapperCol: { span: 21 },
+};
 
 /*
-  STRIPES-NEW-APP
-  This is the main entry point into your new app.
+  App切入点：CLSP测试入口，使用Antd库
 */
-
 class __componentName__ extends React.Component {
   static propTypes = {
     match: PropTypes.object.isRequired,
@@ -37,22 +37,22 @@ class __componentName__ extends React.Component {
       }
     } = this.props;
 
-    if (showSettings) {
-      return <Settings {...this.props} />;
-    }
+   
     return (
-      <Switch>
-        <Route
-          path={path}
-          exact
-          component={Application}
-        />
-        <Route
-          path={`${path}/examples`}
-          exact
-          component={this.connectedExamplePage}
-        />
-      </Switch>
+      <div>
+        <Form
+          {...layout}
+          name="basic"
+        >
+          <Form.Item
+            label="token"
+            rules={[{ required: true, message: 'Please input your username!' }]}
+          >
+            <Input value={"test value"}  />
+          </Form.Item>
+          <Button type="primary">测试Button</Button>          
+        </Form>
+      </div>
     );
   }
 }
